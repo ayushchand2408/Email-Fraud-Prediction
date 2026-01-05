@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <ul class="nav-list">
+        <li><a href="/"> About page</a></li>
+        <li><a href="/single_email">Add 1 Email</a></li>
+        <li><a href="/BulkMails">Add Bulk Email</a></li>
+    </ul>
+
+    <div class="container">
+        <section class="project-card">
+            <h1 id="title"  >Enter The Mail</h1>
+            <p class="description">
+                Enter the description of mail.
+            </p>
+            
+            <form action="/single_email" method="POST" class="prediction-form">
+                <label for="email_text">Paste Email Content:</label>
+                <textarea 
+                    id="email_text" 
+                    name="email_content" 
+                    rows="1" 
+                    placeholder="Example: Congratulations! You've won a $1000 gift card. Click here to claim..." 
+                    required></textarea>
+                
+                <button type="submit" class="predict-btn">Analyze Email</button>
+            </form>
+
+            {% if result %}
+                <div class="result-box {{ 'spam-bg' if result == 'Spam' else 'ham-bg' }}">
+                    Analysis Result: <strong>{{ result }}</strong>
+                </div>
+
+            {% endif %}
+        </section>
+    </div>
+
+</body>
+</html>

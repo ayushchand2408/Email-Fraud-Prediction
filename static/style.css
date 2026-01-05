@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url("email.image.jpg");
+    background-size: cover;
+    background-position: center;    
+    z-index: -1;
+}
+
+.header {
+    display: block; /* This is the default, but ensure it hasn't been changed */
+    width: 100%;
+    text-align: center; /* Aligns text to the middle */
+     /* Changes the actual text color */
+}
+
+.nav-list {
+    display: flex;         /* Lays items out in a row */
+    list-style-type: none; /* Removes the bullet points */
+    padding: 1;
+    margin: 0;
+    background-color: white;
+}
+
+.nav-list li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none; /* Removes the underline */
+}
+
+.nav-list li a:hover {
+    background-color:wheat;
+}
+
+
+/* for discription*/
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.project-card {
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.project-card h1 {
+    color: #1a1a1a;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.description {
+    font-size: 1.15rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.workflow-list {
+    margin-top: 25px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.workflow-list li {
+    background: #f8f9fa;
+    margin-bottom: 12px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+    color: #333;
+    transition: transform 0.2s;
+}
+
+.workflow-list li:hover {
+    transform: translateX(10px);
+    background: #f1f7ff;
+}
+
+.workflow-list strong {
+    color: #0056b3;
+}
+
+
+/* one email part*/
+
+#title {
+    text-align: center;
+    margin-top: 20px;
+}
+/* Styling the result container */
+.result-box {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Red for Spam */
+.spam-bg {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+/* Green for Not Spam */
+.ham-bg {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Emial Spam Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <ul class="nav-list">
+        <li><a href="/"> About page</a></li>
+        <li><a href="/single_email">Add 1 Email</a></li>
+        <li><a href="/BulkMails">Add Bulk Email</a></li>
+    </ul>
+     
+    <div class="container">
+    <section class="project-card">
+        <h1>Bulk Spam Analysis</h1>
+        <p>Upload a CSV file with a column named <strong>"Message"</strong> to process multiple emails.</p>
+        
+        <form action="/BulkMails" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file_upload" accept=".csv" required>
+            <br><br>
+            <button type="submit" class="predict-btn">Process & Download Results</button>
+        </form>
+    </section>
+</div>
+</body>
+</html>

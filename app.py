@@ -1,4 +1,6 @@
-from flask import Flask , render_template , request , redirect
+import pandas as pd
+import io
+from flask import Flask , render_template , request , redirect , send_file , Response
 import joblib
 app = Flask(__name__)
 
@@ -22,7 +24,6 @@ def single_mail():
             prediciton_text = "Spam" if prediciton == 1 else "Not Spam"
 
     return render_template('one_email.html' , result = prediciton_text)
-
 
 if __name__ == '__main__':
     app.run(debug = True)   
